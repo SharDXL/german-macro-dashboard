@@ -1,6 +1,6 @@
 # German Macro Regime Dashboard
 
-**Author:** Shardul Pundir | MSc Finance @ WHU Otto Beisheim (Sep 2026)  
+**Author:** Shardul Pundir | Economics Graduate · CFA Level I  
 **Stack:** Python · pandas · requests · Plotly · Jupyter  
 **Data:** IFO Institute · ZEW · ECB SDW API · Destatis · yfinance
 
