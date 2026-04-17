@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.env
+.venv
+venv/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Data files (potentially large)
+data/raw/*.csv
+data/raw/*.xlsx
+
+# API keys (never commit)
+config.py
+secrets.py
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
