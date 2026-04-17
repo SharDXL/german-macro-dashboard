@@ -1,6 +1,5 @@
 # German Macro Regime Dashboard
 
-**Author:** Shardul Pundir | MSc Finance @ WHU Otto Beisheim (Sep 2026)  
 **Stack:** Python · pandas · requests · Plotly · Jupyter  
 **Data:** IFO Institute · ZEW · ECB SDW API · Destatis · yfinance
 
@@ -109,20 +108,3 @@ else:                 regime = "Recovery"
 | PMI Germany | [FRED](https://fred.stlouisfed.org) | FRED API (free key) |
 | DAX sectors | [yfinance](https://pypi.org/project/yfinance/) | Python library |
 
----
-
-## CV Line
-
-> Built a German macro regime dashboard in Python integrating IFO, ZEW, PMI, ECB yield curve, and CPI data into a four-phase economic cycle classifier with DAX sector overlay. Used to track Germany's economic environment weekly in preparation for WHU MSc Finance.
-
----
-
-## Timeline
-
-| Milestone | Target |
-|-----------|--------|
-| Data modules complete | Week 1 |
-| Regime classifier built | Week 2 |
-| Jupyter dashboard live | Week 3 |
-| First monthly macro commentary | Week 4 |
-| GitHub launch | May 2026 |
