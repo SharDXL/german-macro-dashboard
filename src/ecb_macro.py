@@ -12,7 +12,7 @@ Series fetched:
   - Euro Area HICP (headline)  : ICP.M.U2.N.000000.4.ANR
   - German HICP                : ICP.M.DE.N.000000.4.ANR
 
-Docs: https://sdw-wsrest.ecb.europa.eu/web/generator/index.html
+Docs: https://data-api.ecb.europa.eu/
 """
 
 import requests
@@ -21,7 +21,7 @@ from io import StringIO
 from datetime import date, timedelta
 
 
-ECB_BASE = "https://sdw-wsrest.ecb.europa.eu/service/data"
+ECB_BASE = "https://data-api.ecb.europa.eu/service/data"
 
 SERIES = {
     # Rates

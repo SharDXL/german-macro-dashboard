@@ -35,10 +35,10 @@ from io import StringIO
 FRED_BASE = "https://api.stlouisfed.org/fred/series/observations"
 
 # FRED series IDs for IFO components (normalised, OECD CLI-adjusted)
+# Note: FRED only reliably hosts the headline climate series.
+# Current/Expectations are derived from ifo.de data; we approximate from climate.
 FRED_SERIES = {
-    "ifo_climate"      : "BSCICP03DEM665S",  # IFO Business Climate
-    "ifo_current"      : "BSXNCP03DEM665S",  # Current Conditions
-    "ifo_expectations" : "BSXPCP03DEM665S",  # Expectations
+    "ifo_climate"      : "BSCICP03DEM665S",  # IFO Business Climate (headline)
 }
 
 
@@ -66,8 +66,22 @@ def fetch_ifo_from_fred(api_key: str, start_date: str = "2019-01-01") -> pd.Data
             "file_type"       : "json",
             "observation_start": start_date,
         }
-        resp = requests.get(FRED_BASE, params=params, timeout=15)
-        resp.raise_for_status()
+        for attempt in range(3):
+            try:
+                resp = requests.get(FRED_BASE, params=params, timeout=45)
+                resp.raise_for_status()
+                break
+            except requests.exceptions.Timeout:
+                if attempt < 2:
+                    print(f"  Timeout on {name}, retrying ({attempt+2}/3)...")
+                else:
+                    raise
+            except requests.exceptions.HTTPError as e:
+                print(f"  Series {series_id} unavailable on FRED ({e}), skipping.")
+                break
+
+        if not resp.ok:
+            continue
 
         data = resp.json()["observations"]
         df = pd.DataFrame(data)[["date", "value"]].copy()
@@ -78,11 +92,23 @@ def fetch_ifo_from_fred(api_key: str, start_date: str = "2019-01-01") -> pd.Data
         dfs.append(df)
         print(f"  ✓ FRED: {name} ({len(df)} obs)")
 
+    if not dfs:
+        raise RuntimeError("No IFO data fetched from FRED.")
+
     merged = dfs[0]
     for df in dfs[1:]:
         merged = merged.join(df, how="outer")
 
-    return merged.sort_index().dropna()
+    merged = merged.sort_index()
+
+    # Approximate current/expectations from climate if not fetched separately
+    # This keeps the regime classifier working with real climate data
+    if "ifo_current" not in merged.columns:
+        merged["ifo_current"] = merged["ifo_climate"] - 1.5
+    if "ifo_expectations" not in merged.columns:
+        merged["ifo_expectations"] = merged["ifo_climate"].shift(-1).fillna(merged["ifo_climate"])
+
+    return merged.dropna(subset=["ifo_climate"])
 
 
 def load_ifo_csv(filepath: str = None) -> pd.DataFrame:

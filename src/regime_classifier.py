@@ -63,9 +63,10 @@ def get_ecb_regime_score(ecb_df: pd.DataFrame) -> dict:
         curve_score = 2  # inverted
 
     # Rate direction (compare to 6 months ago)
-    if len(ecb_df) > 120:  # ~6 months of daily data
-        ecb_rate_now  = latest.get("ecb_deposit_rate", np.nan)
-        ecb_rate_6m   = ecb_df["ecb_deposit_rate"].dropna().iloc[-120]
+    rate_series = ecb_df["ecb_deposit_rate"].dropna()
+    if len(rate_series) > 120:
+        ecb_rate_now = rate_series.iloc[-1]
+        ecb_rate_6m  = rate_series.iloc[-120]
         if pd.isna(ecb_rate_now) or pd.isna(ecb_rate_6m):
             rate_score = 5
         elif ecb_rate_now < ecb_rate_6m - 0.1:
@@ -74,6 +75,15 @@ def get_ecb_regime_score(ecb_df: pd.DataFrame) -> dict:
             rate_score = 2   # hiking → restrictive
         else:
             rate_score = 5   # on hold
+    elif len(rate_series) > 1:
+        ecb_rate_now = rate_series.iloc[-1]
+        ecb_rate_6m  = rate_series.iloc[0]
+        if ecb_rate_now < ecb_rate_6m - 0.1:
+            rate_score = 8
+        elif ecb_rate_now > ecb_rate_6m + 0.1:
+            rate_score = 2
+        else:
+            rate_score = 5
     else:
         rate_score = 5
 
