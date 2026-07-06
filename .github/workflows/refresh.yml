@@ -1,0 +1,38 @@
+name: Weekly macro data refresh
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # every Monday 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh ECB, ZEW, and DAX sector data and recompute regime
+        # Note: IFO Business Climate is not included in the automated refresh --
+        # it requires a free FRED API key (register at fred.stlouisfed.org)
+        # or a manual monthly CSV download from ifo.de. Add FRED_API_KEY as a
+        # repo secret and update run_regime.py to include it once available.
+        run: python run_regime.py
+
+      - name: Commit updated outputs if anything changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add outputs/ src/__pycache__ 2>/dev/null || true
+          git add outputs/
+          git diff --cached --quiet || git commit -m "Automated weekly macro regime refresh"
+          git push

@@ -1,0 +1,27 @@
+{
+  "composite_score": 69,
+  "regime": "Slowdown",
+  "regime_color": "yellow",
+  "regime_confidence": "Moderate",
+  "regime_description": "Growth decelerating. IFO declining, ZEW softening. PMI approaching 50. Defensive rotation beginning. ECB may be at or near peak rates.",
+  "sector_playbook": {
+    "overweight": [
+      "Healthcare",
+      "Consumer Staples",
+      "Technology (quality)"
+    ],
+    "underweight": [
+      "Autos",
+      "Banks",
+      "Materials"
+    ],
+    "bond_view": "Duration neutral \u2014 beginning to add as rates peak"
+  },
+  "component_scores": {
+    "ifo": 11,
+    "zew": 17,
+    "ecb": 16,
+    "equity": 25
+  },
+  "as_of": "2026-07-06"
+}

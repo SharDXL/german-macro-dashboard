@@ -1,0 +1,30 @@
+
+GERMAN MACRO WEEKLY — 18 April 2026
+=======================================================
+
+REGIME: SLOWDOWN (53/100) — Low (near threshold) confidence
+
+KEY DATA:
+  • IFO Business Climate : 98.95 (expectations gap: +1.5)
+  • ZEW Expectations     : -0.5 (deteriorating)
+  • ECB Deposit Rate     : nan%
+  • Bund 10Y             : 0.586 spread (2s10s)
+  • EA HICP              : None% YoY
+  • Sector Signal        : Cyclical outperformance → market pricing Expansion
+
+ANALYSIS:
+  Growth decelerating. IFO declining, ZEW softening. PMI approaching 50. Defensive rotation beginning. ECB may be at or near peak rates.
+
+PLAYBOOK:
+  Overweight : Healthcare, Consumer Staples, Technology (quality)
+  Underweight: Autos, Banks, Materials
+  Duration   : Duration neutral — beginning to add as rates peak
+
+WATCH NEXT:
+  [ ] IFO release (last Mon/Tue of month)
+  [ ] ZEW release (2nd Tue of month)
+  [ ] ECB meeting / policy statement
+  [ ] German CPI flash estimate
+  [ ] PMI Manufacturing (1st Tue of month)
+
+=======================================================

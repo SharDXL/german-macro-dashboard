@@ -20,6 +20,9 @@ import pandas as pd
 from io import StringIO
 from datetime import date, timedelta
 
+# Data vintage stamp — printed in any report that uses this module
+DATA_AS_OF = __import__("datetime").datetime.today().strftime("%d %b %Y")
+
 
 ECB_BASE = "https://data-api.ecb.europa.eu/service/data"
 
