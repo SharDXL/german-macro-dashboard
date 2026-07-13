@@ -1,27 +1,27 @@
 {
-  "composite_score": 69,
-  "regime": "Slowdown",
-  "regime_color": "yellow",
-  "regime_confidence": "Moderate",
-  "regime_description": "Growth decelerating. IFO declining, ZEW softening. PMI approaching 50. Defensive rotation beginning. ECB may be at or near peak rates.",
+  "composite_score": 77,
+  "regime": "Expansion",
+  "regime_color": "green",
+  "regime_confidence": "Low (near threshold)",
+  "regime_description": "German economy operating above trend. Business confidence high, PMI expansionary, equity cyclicals leading. Focus: growth assets, cyclicals, credit. Watch for overheating signals.",
   "sector_playbook": {
     "overweight": [
-      "Healthcare",
-      "Consumer Staples",
-      "Technology (quality)"
-    ],
-    "underweight": [
       "Autos",
       "Banks",
+      "Industrials",
       "Materials"
     ],
-    "bond_view": "Duration neutral \u2014 beginning to add as rates peak"
+    "underweight": [
+      "Utilities",
+      "Healthcare"
+    ],
+    "bond_view": "Bearish duration \u2014 expect yields to rise or stay high"
   },
   "component_scores": {
     "ifo": 11,
-    "zew": 17,
+    "zew": 25,
     "ecb": 16,
     "equity": 25
   },
-  "as_of": "2026-07-06"
+  "as_of": "2026-07-13"
 }

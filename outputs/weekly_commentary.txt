@@ -1,23 +1,23 @@
 GERMAN MACRO REGIME DASHBOARD
-Generated: 06 July 2026
+Generated: 13 July 2026
 ==============================
 
-REGIME: SLOWDOWN
-Composite Score: 69/100
-Confidence: Moderate
+REGIME: EXPANSION
+Composite Score: 77/100
+Confidence: Low (near threshold)
 
 SUMMARY:
-Growth decelerating. IFO declining, ZEW softening. PMI approaching 50. Defensive rotation beginning. ECB may be at or near peak rates.
+German economy operating above trend. Business confidence high, PMI expansionary, equity cyclicals leading. Focus: growth assets, cyclicals, credit. Watch for overheating signals.
 
 COMPONENT SCORES:
   IFO (Business Climate): 11/25  [STALE - see note above]
-  ZEW (Financial Sentiment): 17/25  [LIVE - 2026-06-01]
+  ZEW (Financial Sentiment): 25/25  [LIVE - 2026-02-01]
   ECB (Rates/Inflation): 16/25  [LIVE]
   Equity (Sector Rotation): 25/25  [LIVE]
 
 KEY DATA POINTS:
   IFO Climate Index:      98.95
-  ZEW Expectations:       10.5
+  ZEW Expectations:       58.3
   ECB Deposit Rate:       2.25%
-  Bund 2s10s spread:      0.534
-  Cyclical vs Defensive (3m): 9.88pp -- Cyclical outperformance → market pricing Expansion
+  Bund 2s10s spread:      0.515
+  Cyclical vs Defensive (3m): 6.42pp -- Cyclical outperformance → market pricing Expansion
