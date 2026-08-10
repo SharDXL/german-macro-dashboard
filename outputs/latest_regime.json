@@ -1,8 +1,8 @@
 {
-  "composite_score": 66,
+  "composite_score": 73,
   "regime": "Slowdown",
   "regime_color": "yellow",
-  "regime_confidence": "High",
+  "regime_confidence": "Low (near threshold)",
   "regime_description": "Growth decelerating. IFO declining, ZEW softening. PMI approaching 50. Defensive rotation beginning. ECB may be at or near peak rates.",
   "sector_playbook": {
     "overweight": [
@@ -21,7 +21,7 @@
     "ifo": 11,
     "zew": 25,
     "ecb": 12,
-    "equity": 18
+    "equity": 25
   },
-  "as_of": "2026-08-03"
+  "as_of": "2026-08-10"
 }
