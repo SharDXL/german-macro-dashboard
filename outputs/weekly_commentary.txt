@@ -1,5 +1,5 @@
 GERMAN MACRO REGIME DASHBOARD
-Generated: 10 August 2026
+Generated: 17 August 2026
 ==============================
 
 REGIME: SLOWDOWN
@@ -19,5 +19,5 @@ KEY DATA POINTS:
   IFO Climate Index:      98.95
   ZEW Expectations:       58.3
   ECB Deposit Rate:       2.25%
-  Bund 2s10s spread:      0.474
-  Cyclical vs Defensive (3m): 6.66pp -- Cyclical outperformance → market pricing Expansion
+  Bund 2s10s spread:      0.465
+  Cyclical vs Defensive (3m): 10.23pp -- Cyclical outperformance → market pricing Expansion
