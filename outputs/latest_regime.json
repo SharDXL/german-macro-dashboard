@@ -1,5 +1,5 @@
 {
-  "composite_score": 66,
+  "composite_score": 60,
   "regime": "Slowdown",
   "regime_color": "yellow",
   "regime_confidence": "High",
@@ -21,7 +21,7 @@
     "ifo": 11,
     "zew": 25,
     "ecb": 12,
-    "equity": 18
+    "equity": 12
   },
-  "as_of": "2026-10-19"
+  "as_of": "2026-10-26"
 }
